@@ -3,6 +3,7 @@ https://learnku.com/docs/laravel/5.7
 
 ## Docker本地测试环境启动
 ```
+cp .env.example .env
 cd ${项目目录}
 composer install --optimize-autoloader
 cd docker
