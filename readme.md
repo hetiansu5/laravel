@@ -14,6 +14,8 @@ docker-compose up --force-recreate --remove-orphans -d
 * app/Providers/RouteServiceProvider.php的map函数增加新应用的路由选择方案
 
 ## 项目目录
+
+```
 |- app           应用程序的核心代码
     |- Console      自定义的 Artisan 命令
     |- Exceptions   应用的异常处理器
@@ -37,6 +39,7 @@ docker-compose up --force-recreate --remove-orphans -d
 |- storage       日志、缓存等
 |- tests         单元测试
 |- vendor        依赖包
+```
 
 ## PHP规范
 
