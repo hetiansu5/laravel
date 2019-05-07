@@ -1,0 +1,22 @@
+version: "2"
+
+services:
+    app:
+      image: tinson/debian8.4-nginx-php7.1
+      expose:
+        - 80
+      volumes:
+        - "..:/www"
+      restart: always
+      environment:
+        VIRTUAL_HOST: laravel.qd-docker.com,api-laravel.qd-docker.com
+      container_name: laravel
+      entrypoint: "/www/docker/entrypoint.sh"
+    redis.dev:
+      image: redis
+      restart: always
+      container_name: redis.laravel.dev
+networks:
+  default:
+    external:
+      name: nginx-proxy
