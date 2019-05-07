@@ -178,3 +178,9 @@ docker-compose up --force-recreate --remove-orphans -d
 * 使预编译语句，只传参数，比传递SQL语句更高效;一次解析，多次使用;降低SQL注入概率
 * 禁止使order by rand()
 * 禁单条SQL语句同时更新多个表
+
+
+### 单元测试
+```
+sh phpunit.sh
+```
