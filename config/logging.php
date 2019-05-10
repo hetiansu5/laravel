@@ -50,6 +50,7 @@ return [
             'driver' => 'daily',
             'path' => storage_path('logs/laravel.log'),
             'level' => 'debug',
+            'formatter' => \Monolog\Formatter\JsonFormatter::class,
             'days' => 14,
         ],
 
