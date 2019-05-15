@@ -18,6 +18,7 @@ docker-compose up --force-recreate --remove-orphans -d
 ```
 |- app           应用程序的核心代码
     |- Console      自定义的 Artisan 命令
+    |- Contants     常量层
     |- Exceptions   应用的异常处理器
     |- Http         包含了控制器、中间件和表单请求
         |- ApiControllers   Api控制器
