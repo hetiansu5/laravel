@@ -35,6 +35,10 @@ docker-compose up --force-recreate --remove-orphans -d
 |- database      数据填充和迁移文件以及模型工厂类
 |- docker        本地Docker环境配置
 |- public        项目入口
+    |- api          API应用
+        |- index.php        入口文件
+    |- web          Web应用
+        |- index.php        入口文件
 |- resources     视图和未编译的资源文件（如 LESS、SASS 或 JavaScript）
 |- routes        路由
 |- storage       日志、缓存等
