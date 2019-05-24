@@ -2,11 +2,6 @@
 
 namespace App\Jobs;
 
-use Illuminate\Bus\Queueable;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\Log;
 
 /**
@@ -17,34 +12,10 @@ use Illuminate\Support\Facades\Log;
  *
  * @package App\Jobs
  */
-class TestJob implements ShouldQueue
+class TestJob extends BaseJob
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    const QUEUE_NAME = 'test';
-
-    protected $data;
-
-    /**
-     * Create a new job instance.
-     *
-     * @return void
-     */
-    public function __construct($data)
-    {
-        $this->data = $data;
-    }
-
-
-    /**
-     * Send a job
-     *
-     * @param $data
-     */
-    public static function send($data)
-    {
-        static::dispatch($data)->onQueue(self::QUEUE_NAME);
-    }
+    protected static $queue_name = 'test';
 
     /**
      * Execute the job.
@@ -53,6 +24,9 @@ class TestJob implements ShouldQueue
      */
     public function handle()
     {
-        Log::info($this->data);
+        Log::info($this->data . 'start');
+        sleep(5);
+        Log::info($this->data . 'end');
     }
+
 }
